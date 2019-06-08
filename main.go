@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-const repo_to_watch string = "../logrit-gae-sample/"
+const repo_to_watch string = "https://github.com/chathaway-codes/logrit-gae-sample.git"
 
 type Template struct {
     templates *template.Template
@@ -32,7 +32,7 @@ func main() {
 		panic(err)
 	}
 
-	root := "sample/"
+	root := "gs://logrit-gae-test/sample/"
 	// Setup templates
 	t := &Template{
 		templates: template.Must(template.ParseGlob(root + "_templates/*.html")),
