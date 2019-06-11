@@ -28,7 +28,7 @@ type config struct {
 	Template TemplateRenderer
 }
 
-func find_renderer(dir string) (func(echo.Context) error) {
+func find_renderer(dir string, fs billy.Filesystem) (func(echo.Context) error) {
 	var conf config
 	fname := path.Join(dir, ".template")
 	ops, err := toml.DecodeFile(fname, &conf)
